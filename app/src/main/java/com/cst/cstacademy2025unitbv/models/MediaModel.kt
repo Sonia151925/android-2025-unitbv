@@ -1,10 +1,9 @@
 package com.cst.cstacademy2025unitbv.models
 
-enum class MediaType(val id: Int ) {
+enum class MediaType(val id: Int) {
     PODCAST(0),
-    IMAGE(1),
-    VIDEO(2),
-    TEXT(3)
+    VIDEO(1),
+    POST(2)
 }
 
 sealed class MediaModel(
@@ -12,4 +11,14 @@ sealed class MediaModel(
 )
 
 
-class PodcastModel(): MediaModel(MediaType.PODCAST)
+class PodcastModel(
+    val title:String
+) : MediaModel(MediaType.PODCAST)
+class VideoModel(
+    val title:String,
+    val description:String
+) : MediaModel(MediaType.VIDEO)
+class PostModel(
+    val title:String,
+    val imageUrl:String
+) : MediaModel(MediaType.POST)

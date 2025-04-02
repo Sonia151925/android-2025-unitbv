@@ -63,4 +63,5 @@ dependencies {
 
     // JSON serialization library, works with the Kotlin serialization plugin
     implementation(libs.kotlinx.serialization.json)
+    implementation("com.github.bumptech.glide:glide:4.16.0")
 }
